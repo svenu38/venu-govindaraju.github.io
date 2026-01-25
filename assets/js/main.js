@@ -36,6 +36,31 @@
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
 
+
+  /**/
+   const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".side-nav li");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 100;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(li => {
+    li.classList.remove("active");
+    const a = li.querySelector("a");
+    if (a.getAttribute("href") === `#${current}`) {
+      li.classList.add("active");
+    }
+  });
+});
+
+
   /**
    * Hide mobile nav on same-page/hash links
    */
@@ -237,3 +262,45 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+// Show header name only after leaving hero section
+const header = document.querySelector('#header');
+const heroSection = document.querySelector('#hero');
+
+function toggleHeaderName() {
+  const heroBottom = heroSection.offsetHeight - 100;
+
+  if (window.scrollY > heroBottom) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+}
+
+window.addEventListener('scroll', toggleHeaderName);
+
+
+
+// Active state for side navigation
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".side-nav li");
+
+function activateSideNav() {
+  let scrollY = window.pageYOffset;
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    const sectionHeight = section.offsetHeight;
+    const sectionId = section.getAttribute("id");
+
+    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+      navLinks.forEach(li => li.classList.remove("active"));
+      document
+        .querySelector(`.side-nav a[href="#${sectionId}"]`)
+        ?.parentElement.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", activateSideNav);

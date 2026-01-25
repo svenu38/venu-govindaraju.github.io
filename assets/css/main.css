@@ -129,6 +129,23 @@
 
 
 
+
+
+/* Hide name by default (Hero section) */
+.header-name {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+/* Show name when scrolled */
+.header.scrolled .header-name {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
@@ -292,6 +309,103 @@ h6 {
 ------------------------------*/
 .index-page.scrolled .header {
   --background-color: rgba(20, 20, 20, 0.8);
+}
+
+/* ================================
+   RIGHT SIDE NAVIGATION
+================================ */
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.side-nav li {
+  margin: 10px 0;
+}
+
+.side-nav a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.side-nav a:hover,
+.side-nav li.active a {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+/* Tooltip on hover (desktop only) */
+.side-nav a::after {
+  content: attr(data-label);
+  position: absolute;
+  right: 60px;
+  background: #000;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.side-nav a:hover::after {
+  opacity: 1;
+}
+
+/* ================================
+   MOBILE VIEW (BOTTOM NAV)
+================================ */
+
+@media (max-width: 768px) {
+  .side-nav {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: none;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 8px 0;
+  }
+
+  .side-nav ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .side-nav li {
+    margin: 0;
+  }
+
+  .side-nav a {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  /* Disable tooltips on mobile */
+  .side-nav a::after {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -4370,3 +4484,184 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+
+/* ===============================
+   Right Side Vertical Navigation
+================================= */
+.side-nav {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.side-nav ul {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 12px 8px;
+  list-style: none;
+  margin: 0;
+  backdrop-filter: blur(12px);
+}
+
+.side-nav li {
+  margin: 10px 0;
+  position: relative;
+}
+
+.side-nav a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.side-nav a:hover,
+.side-nav li.active a {
+  color: #00ff99;
+  background: rgba(0, 255, 153, 0.12);
+}
+
+/* Tooltip */
+.side-nav a::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 60px;
+  background: #2b2b2b;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  opacity: 0;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  top: 50%;
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.side-nav a:hover::before {
+  opacity: 1;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+}
+
+/* Final right-side vertical navigation positioning */
+.side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+
+/* ===============================
+   Right Side Vertical Navigation
+================================= */
+.side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.side-nav ul {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 12px 8px;
+  list-style: none;
+  margin: 0;
+  backdrop-filter: blur(12px);
+}
+
+.side-nav li {
+  margin: 10px 0;
+  position: relative;
+}
+
+.side-nav a {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.side-nav a:hover,
+.side-nav li.active a {
+  color: #00ff99;
+  background: rgba(0, 255, 153, 0.12);
+}
+
+/* Tooltip */
+.side-nav a::before {
+  content: attr(data-label);
+  position: absolute;
+  right: 60px;
+  background: #2b2b2b;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 6px;
+  opacity: 0;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  top: 50%;
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.side-nav a:hover::before {
+  opacity: 1;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+}
+
+
+/* Final right-side vertical navigation positioning */
+.side-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+}
+
+.header {
+  z-index: 1000;
+}
+
+.side-nav {
+  z-index: 9999;
+}
+
+
