@@ -4291,18 +4291,18 @@ section,
 ========================================= */
 
 .skill-group {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.035),
-    rgba(255, 255, 255, 0.015)
-  );
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.015));
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;                 /* ✅ Rounded corners */
+  border-radius: 20px;
+  /* ✅ Rounded corners */
   padding: 24px 26px;
   height: 100%;
   transition: all 0.35s ease;
   position: relative;
-  overflow: hidden;                    /* ✅ Enforce rounding */
+  overflow: hidden;
+  /* ✅ Enforce rounding */
 }
 
 /* Hover effect */
@@ -4340,7 +4340,8 @@ section,
 /* Skill text (links or spans) */
 .skill-tags span,
 .skill-tags a {
-  color: #ff4d4d;                      /* ✅ Red text like screenshot */
+  color: #ff4d4d;
+  /* ✅ Red text like screenshot */
   font-size: 0.95rem;
   font-weight: 500;
   text-decoration: none;
@@ -4365,7 +4366,7 @@ section,
 .skill-group.highlight {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 1px rgba(255, 77, 77, 0.5),
-              0 18px 45px rgba(0, 0, 0, 0.5);
+    0 18px 45px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive spacing */
@@ -4400,3 +4401,41 @@ section,
   background: rgba(255, 74, 74, 0.25);
   transform: translateY(-1px);
 }
+
+
+
+
+/* Red Roadmap Button */
+.roadmap-btn {
+  background-color: #e63946;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.roadmap-btn:hover {
+  background-color: #d62839;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(230, 57, 70, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Make cards equal-height and align button consistently */
+.service-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Push button to bottom */
+.service-item .roadmap-btn {
+  margin-top: auto;
+  align-self: center;
+}
+
+
+
+
