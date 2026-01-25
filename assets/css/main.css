@@ -4256,12 +4256,14 @@ section,
   }
 }
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
 
+
+
+
+/* Force same red color for nav (desktop + mobile) */
+.side-nav li.active a,
+.side-nav a:hover {
+  background: #ff4a4a;
+}
 
 
