@@ -66,30 +66,16 @@
      Typed.js
   =============================== */
   const typedEl = document.querySelector('.typed');
-const articleEl = document.getElementById('article');
-
-if (typedEl && articleEl) {
-  const roles = typedEl.getAttribute('data-typed-items').split(',');
-
-  new Typed('.typed', {
-    strings: roles,
-    loop: true,
-    typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 2000,
-    preStringTyped: (arrayPos) => {
-      const text = roles[arrayPos].trim();
-
-      // Use "an" only for AI roles
-      if (text.startsWith('AI')) {
-        articleEl.textContent = 'an';
-      } else {
-        articleEl.textContent = 'a';
-      }
-    }
-  });
-}
-
+  if (typedEl) {
+    const items = typedEl.getAttribute('data-typed-items').split(',');
+    new Typed('.typed', {
+      strings: items,
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 50,
+      backDelay: 2000
+    });
+  }
 
   /* ===============================
      Skills Animation
@@ -217,3 +203,5 @@ if (typedEl && articleEl) {
   window.addEventListener('load', updateSideNav);
 
 })();
+
+

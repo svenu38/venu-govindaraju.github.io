@@ -1,0 +1,74 @@
+/* ===============================
+   Python Roadmap Enhancements
+================================ */
+
+/* Timeline card positioning */
+.timeline-content {
+    position: relative;
+}
+
+/* Level badges (top-right) */
+.level-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+/* Badge colors */
+.level-beginner {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4caf50;
+}
+
+.level-core {
+    background: rgba(33, 150, 243, 0.15);
+    color: #2196f3;
+}
+
+.level-data {
+    background: rgba(156, 39, 176, 0.15);
+    color: #9c27b0;
+}
+
+.level-advanced {
+    background: rgba(255, 152, 0, 0.15);
+    color: #ff9800;
+}
+
+.level-project {
+    background: rgba(230, 57, 70, 0.15);
+    color: #e63946;
+}
+
+.level-practice {
+    background: rgba(0, 188, 212, 0.15);
+    color: #00bcd4;
+}
+
+/* Interactive Find Material button */
+.resource-link.interactive {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    transition: all 0.3s ease;
+}
+
+.resource-link.interactive:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}

@@ -4437,5 +4437,21 @@ section,
 }
 
 
+/* =========================================
+   FORCE SAME BACKGROUND AS RESUME
+   (AI Roadmap Section)
+========================================= */
 
+#ai-roadmap {
+  /* Match Resume / global section background */
+  --background-color: #141414;
 
+  /* Keep cards consistent with rest of site */
+  --surface-color: #1c1c1c;
+}
+
+/* Safety: neutralize light-background override */
+#ai-roadmap.light-background {
+  --background-color: #141414;
+  --surface-color: #1c1c1c;
+}
