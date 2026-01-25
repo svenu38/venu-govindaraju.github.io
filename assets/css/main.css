@@ -4285,6 +4285,96 @@ section,
   opacity: 0.6;
 }
 
+
+/* =========================================
+   SKILLS SECTION – CARD STYLING (FINAL)
+========================================= */
+
+.skill-group {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.015)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;                 /* ✅ Rounded corners */
+  padding: 24px 26px;
+  height: 100%;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;                    /* ✅ Enforce rounding */
+}
+
+/* Hover effect */
+.skill-group:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  transform: translateY(-3px);
+}
+
+/* Header inside card */
+.skill-group h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+/* Icon color */
+.skill-group h4 i {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+}
+
+/* Skill list container */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  line-height: 1.6;
+}
+
+/* Skill text (links or spans) */
+.skill-tags span,
+.skill-tags a {
+  color: #ff4d4d;                      /* ✅ Red text like screenshot */
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Arrow indicator */
+.skill-tags a::after {
+  content: " ↗";
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+/* Hover for links */
+.skill-tags a:hover {
+  color: #ffffff;
+}
+
+/* Special highlight (optional – active card) */
+.skill-group.active,
+.skill-group.highlight {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px rgba(255, 77, 77, 0.5),
+              0 18px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .skill-group {
+    padding: 20px;
+  }
+}
+
 /* ================================
    Skill Tags – Unified Styling
 ================================ */
