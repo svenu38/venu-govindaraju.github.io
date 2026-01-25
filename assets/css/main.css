@@ -4267,3 +4267,46 @@ section,
 }
 
 
+.skill-tags a.skill-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.skill-tags a.skill-link:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.skill-tags a.skill-link::after {
+  content: "↗";
+  font-size: 0.7em;
+  margin-left: 4px;
+  opacity: 0.6;
+}
+
+/* ================================
+   Skill Tags – Unified Styling
+================================ */
+
+.skill-tags span,
+.skill-tags a.skill-link {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 74, 74, 0.12);
+  /* subtle red */
+  color: #ff4a4a;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 4px 6px 4px 0;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Hover (same for span + link) */
+.skill-tags span:hover,
+.skill-tags a.skill-link:hover {
+  background: rgba(255, 74, 74, 0.25);
+  transform: translateY(-1px);
+}
